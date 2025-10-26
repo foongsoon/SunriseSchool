@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUN Education - 阳光教育 | 卓越教育体验</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Sunrise Education | 剑桥IGCSE课程</title>
     <style>
         :root {
-            --primary: #1a73e8;
-            --primary-dark: #0d47a1;
-            --secondary: #ff6d00;
-            --light: #f8f9fa;
-            --dark: #202124;
-            --gray: #5f6368;
-            --light-gray: #dadce0;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --radius: 8px;
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
         }
         
         body {
-            color: var(--dark);
+            background-color: #f9f9f9;
+            color: var(--text);
             line-height: 1.6;
-            background-color: #fff;
         }
         
         .container {
@@ -40,196 +38,143 @@
         
         /* Header & Navigation */
         header {
-            background-color: white;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 0;
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
         
-        .header-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
         
-        .logo-icon {
-            color: var(--primary);
-            font-size: 28px;
-        }
-        
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .logo-text span {
-            color: var(--secondary);
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-left: 10px;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+        }
+        
+        nav li {
+            margin-left: 1.5rem;
         }
         
         nav a {
+            color: var(--text-light);
             text-decoration: none;
-            color: var(--dark);
             font-weight: 500;
             transition: color 0.3s;
         }
         
         nav a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
         
-        .language-switcher {
-            display: flex;
-            gap: 5px;
-        }
-        
-        .lang-btn {
-            padding: 8px 15px;
-            background: none;
-            border: 1px solid var(--light-gray);
-            border-radius: var(--radius);
+        .lang-toggle {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: var(--text-light);
+            padding: 5px 10px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .lang-btn.active {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
+            margin-left: 1rem;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(231, 76, 60, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            padding: 5rem 0;
+            text-align: center;
         }
         
-        .hero-content {
-            max-width: 600px;
-            z-index: 2;
-            position: relative;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            line-height: 1.2;
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
         
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .hero-btns {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
         
         .btn {
-            padding: 14px 30px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            text-decoration: none;
             display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
             transition: all 0.3s;
-            cursor: pointer;
             border: none;
-            font-size: 16px;
+            cursor: pointer;
         }
         
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #e65100;
+        .btn:hover {
+            background-color: #e67e22;
             transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50%;
-            max-width: 600px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background-color: var(--light);
+        /* Sections */
+        section {
+            padding: 4rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 3rem;
         }
         
         .section-title h2 {
-            font-size: 36px;
-            color: var(--dark);
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
         }
         
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
         }
         
-        .features-grid {
+        /* Features */
+        .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
         
         .feature-card {
             background: white;
-            padding: 30px;
-            border-radius: var(--radius);
+            border-radius: 8px;
+            padding: 2rem;
             box-shadow: var(--shadow);
+            text-align: center;
             transition: transform 0.3s;
         }
         
@@ -237,497 +182,520 @@
             transform: translateY(-10px);
         }
         
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(26, 115, 232, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .feature-icon i {
-            font-size: 30px;
+        .feature-card i {
+            font-size: 3rem;
             color: var(--primary);
+            margin-bottom: 1rem;
         }
         
         .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--dark);
         }
         
-        .feature-card p {
-            color: var(--gray);
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .testimonials-grid {
+        /* Courses */
+        .courses-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
         
-        .testimonial-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: var(--radius);
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
             box-shadow: var(--shadow);
         }
         
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--gray);
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .course-header {
             background-color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            font-weight: bold;
-        }
-        
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
+            padding: 1.5rem;
             text-align: center;
         }
         
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+        .course-content {
+            padding: 1.5rem;
         }
         
-        .cta p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 18px;
-            opacity: 0.9;
+        .course-content ul {
+            list-style-type: none;
+        }
+        
+        .course-content li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .course-content li:before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* About */
+        .about-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .mission-section {
+            margin-top: 2rem;
+        }
+        
+        .mission-section ul {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+        
+        .mission-section li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .mission-section li:before {
+            content: "★";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .facebook-link {
+            display: inline-block;
+            background-color: #3b5998;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .facebook-link:hover {
+            background-color: #2d4373;
+        }
+        
+        /* Activities */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .activity {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .activity h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
         
         /* Footer */
         footer {
             background-color: var(--dark);
-            color: white;
-            padding: 70px 0 20px;
+            color: var(--text-light);
+            padding: 3rem 0 1rem;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 25px;
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 10px;
         }
         
-        .footer-column h3::after {
+        .footer-section h3::after {
             content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--secondary);
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
         }
         
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-column a {
-            color: #b0b3b8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column a:hover {
-            color: white;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #3a3b3c;
-            border-radius: 50%;
-            transition: background-color 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary);
-        }
-        
-        .copyright {
+        .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #3a3b3c;
-            color: #b0b3b8;
-            font-size: 14px;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-image {
-                width: 45%;
-            }
-            
-            .hero h1 {
-                font-size: 40px;
-            }
-        }
-        
+        /* Responsive */
         @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                box-shadow: var(--shadow);
-                padding: 20px;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s;
-            }
-            
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            nav ul {
+            .header-content {
                 flex-direction: column;
-                gap: 15px;
-            }
-            
-            .hero {
-                padding: 80px 0;
                 text-align: center;
             }
             
-            .hero-content {
-                max-width: 100%;
-            }
-            
-            .hero-image {
-                position: relative;
-                width: 100%;
-                max-width: 100%;
-                transform: none;
-                margin-top: 40px;
-            }
-            
-            .hero-btns {
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
                 justify-content: center;
             }
             
-            .section-title h2 {
-                font-size: 32px;
+            nav li {
+                margin: 0.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 2.5rem 0;
             }
         }
         
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title h2 {
-                font-size: 28px;
-            }
-            
-            .feature-card, .testimonial-card {
-                padding: 20px;
-            }
+        /* Language Toggle */
+        .lang-en {
+            display: none;
+        }
+        
+        .lang-zh {
+            display: block;
+        }
+        
+        body.lang-en .lang-zh {
+            display: none;
+        }
+        
+        body.lang-en .lang-en {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID_HERE');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
     <header>
-        <div class="container header-container">
+        <div class="container header-content">
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="logo-text">SUN<span>Education</span></div>
+                <h1>Sunrise Education</h1>
             </div>
-            
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            
             <nav>
                 <ul>
-                    <li><a href="#home">首页 / Home</a></li>
-                    <li><a href="#about">关于我们 / About</a></li>
-                    <li><a href="#programs">课程项目 / Programs</a></li>
-                    <li><a href="#admissions">招生信息 / Admissions</a></li>
-                    <li><a href="#contact">联系我们 / Contact</a></li>
+                    <li><a href="#home" class="lang-zh">首页</a><a href="#home" class="lang-en">Home</a></li>
+                    <li><a href="#courses" class="lang-zh">课程</a><a href="#courses" class="lang-en">Courses</a></li>
+                    <li><a href="#about" class="lang-zh">关于我们</a><a href="#about" class="lang-en">About Us</a></li>
+                    <li><a href="#activities" class="lang-zh">活动</a><a href="#activities" class="lang-en">Activities</a></li>
+                    <li><a href="#contact" class="lang-zh">联系我们</a><a href="#contact" class="lang-en">Contact</a></li>
                 </ul>
             </nav>
-            
-            <div class="language-switcher">
-                <button class="lang-btn active">EN</button>
-                <button class="lang-btn">中文</button>
-            </div>
+            <button class="lang-toggle" id="langToggle">EN</button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
-                <h1>Shape Your Future with SUN Education<br>与阳光教育共创未来</h1>
-                <p>Industry-ready skills for the global stage. Join our vibrant community of learners and innovators.<br>为全球舞台做好行业准备。加入我们充满活力的学习者和创新者社区。</p>
-                <div class="hero-btns">
-                    <a href="#programs" class="btn btn-primary">Explore Programs 探索课程</a>
-                    <a href="#admissions" class="btn btn-secondary">Apply Now 立即申请</a>
-                </div>
+            <div class="lang-zh">
+                <h2>欢迎来到 Sunrise 教育</h2>
+                <p>快乐、学习、成长，在这里完美融合。我们提供剑桥IGCSE课程，为学生的未来奠定坚实基础。</p>
             </div>
-            <div class="hero-image">
-                <!-- 这里可以使用实际图片 -->
-                <div style="width:100%;height:400px;background:linear-gradient(45deg, #ff6d00, #ffab40);display:flex;align-items:center;justify-content:center;color:white;font-size:24px;">
-                    <i class="fas fa-users" style="font-size:80px;opacity:0.8;"></i>
-                </div>
+            <div class="lang-en">
+                <h2>Welcome to Sunrise Education</h2>
+                <p>Where Happiness, Learning and Growth Come Together. We offer Cambridge IGCSE Syllabus providing strong academic foundation for students' future.</p>
             </div>
+            <a href="#courses" class="btn lang-zh">了解我们的课程</a>
+            <a href="#courses" class="btn lang-en">Discover Our Programs</a>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="about">
+    <section id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose SUN Education? 为何选择阳光教育?</h2>
-                <p>We provide a transformative educational experience that prepares students for success in a rapidly changing world.<br>我们提供变革性的教育体验，帮助学生在快速变化的世界中取得成功。</p>
+                <h2 class="lang-zh">我们的特色</h2>
+                <h2 class="lang-en">Our Features</h2>
             </div>
-            
-            <div class="features-grid">
+            <div class="features">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <h3>Global Perspective 全球视野</h3>
-                    <p>Our curriculum integrates international standards and multicultural understanding.<br>我们的课程融合国际标准和多元文化理解。</p>
+                    <i>📚</i>
+                    <h3 class="lang-zh">剑桥 IGCSE 课程</h3>
+                    <h3 class="lang-en">Cambridge IGCSE Curriculum</h3>
+                    <p class="lang-zh">全球认可的课程体系，奠定坚实学术基础</p>
+                    <p class="lang-en">Globally recognized syllabus providing strong academic foundation</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Industry-Ready Skills 行业实战技能</h3>
-                    <p>Learn from industry experts and work on real-world projects.<br>向行业专家学习，参与真实项目实践。</p>
+                    <i>🌟</i>
+                    <h3 class="lang-zh">全人教育</h3>
+                    <h3 class="lang-en">Holistic Development</h3>
+                    <p class="lang-zh">学术成就与品格培养、课外活动均衡发展</p>
+                    <p class="lang-en">Balancing academics with character building and extracurricular activities</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>Personalized Learning 个性化学习</h3>
-                    <p>Tailored educational paths to match your unique goals and learning style.<br>量身定制的教育路径，匹配您的独特目标和学习风格。</p>
+                    <i>👨‍🏫</i>
+                    <h3 class="lang-zh">个性化关注</h3>
+                    <h3 class="lang-en">Personalized Attention</h3>
+                    <p class="lang-zh">小班教学，确保每个学生获得专属关怀</p>
+                    <p class="lang-en">Small class sizes ensuring every student receives dedicated care</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="programs">
+    <section id="courses">
         <div class="container">
             <div class="section-title">
-                <h2>Student Success Stories 学生成功故事</h2>
-                <p>Hear from our alumni about their transformative experiences at SUN Education.<br>听听我们校友在阳光教育的变革性经历。</p>
+                <h2 class="lang-zh">课程体系</h2>
+                <h2 class="lang-en">Our Courses</h2>
             </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The industry projects at SUN Education gave me the confidence and skills to secure my dream job at a multinational company immediately after graduation."
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="lang-zh">小学阶段 (1-6年级)</h3>
+                        <h3 class="lang-en">Primary Level (Year 1-6)</h3>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LW</div>
-                        <div class="author-info">
-                            <h4>Li Wei 李伟</h4>
-                            <p>Business Analytics Graduate<br>商业分析毕业生</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "SUN Education's global immersion program allowed me to study in three different countries, expanding my worldview and professional network immensely."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SJ</div>
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>International Business Graduate<br>国际商务毕业生</p>
-                        </div>
+                    <div class="course-content">
+                        <ul>
+                            <li class="lang-zh">英语语言与文学</li>
+                            <li class="lang-en">English Language & Literature</li>
+                            <li class="lang-zh">数学与科学基础</li>
+                            <li class="lang-en">Mathematics & Science Foundations</li>
+                            <li class="lang-zh">创意艺术与音乐</li>
+                            <li class="lang-en">Creative Arts & Music</li>
+                            <li class="lang-zh">体育教育</li>
+                            <li class="lang-en">Physical Education</li>
+                            <li class="lang-zh">道德教育与品格塑造</li>
+                            <li class="lang-en">Moral Education & Character Building</li>
+                        </ul>
                     </div>
                 </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The personalized mentorship I received helped me identify my strengths and build a career path I'm truly passionate about."
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="lang-zh">中学阶段 (7-11年级)</h3>
+                        <h3 class="lang-en">Secondary Level (Year 7-11)</h3>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">ZM</div>
-                        <div class="author-info">
-                            <h4>Zhang Min 张敏</h4>
-                            <p>Computer Science Graduate<br>计算机科学毕业生</p>
-                        </div>
+                    <div class="course-content">
+                        <ul>
+                            <li class="lang-zh">高级数学与科学</li>
+                            <li class="lang-en">Advanced Mathematics & Sciences</li>
+                            <li class="lang-zh">商业研究与经济</li>
+                            <li class="lang-en">Business Studies & Economics</li>
+                            <li class="lang-zh">计算机科学与技术</li>
+                            <li class="lang-en">Computer Science & Technology</li>
+                            <li class="lang-zh">语言课程 (华文、法语、西班牙语)</li>
+                            <li class="lang-en">Languages (Mandarin, French, Spanish)</li>
+                            <li class="lang-zh">研究与项目工作</li>
+                            <li class="lang-en">Research & Project Work</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="admissions">
+    <section id="about">
         <div class="container">
-            <h2>Ready to Transform Your Future? 准备好改变未来了吗?</h2>
-            <p>Join thousands of successful graduates who started their journey at SUN Education. Applications for the next semester are now open.<br>加入成千上万在阳光教育开始他们旅程的成功毕业生。下一学期申请现已开放。</p>
-            <a href="#contact" class="btn btn-primary">Start Your Application 开始申请</a>
+            <div class="section-title">
+                <h2 class="lang-zh">关于我们</h2>
+                <h2 class="lang-en">About Us</h2>
+            </div>
+            <div class="about-container">
+                <div class="lang-zh">
+                    <h3>我们的教育理念</h3>
+                    <p>在Sunrise教育，我们相信每个孩子都像清晨的太阳，充满无限潜力和光芒。我们的使命是创造一个温暖、积极的环境，帮助他们在自信和快乐中学习和成长。</p>
+                    
+                    <div class="mission-section">
+                        <h3>我们的使命</h3>
+                        <ul>
+                            <li>点燃学习热情</li>
+                            <li>培养良好品格</li>
+                            <li>建立支持性社区</li>
+                            <li>提供优质教育</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lang-en">
+                    <h3>Our Education Philosophy</h3>
+                    <p>At Sunrise Education, we believe that every child is like the morning sun, full of infinite potential and light. Our mission is to create a warm and positive environment to help them learn and grow with confidence and joy.</p>
+                    
+                    <div class="mission-section">
+                        <h3>Our Missions</h3>
+                        <ul>
+                            <li>To Ignite a Passion for Learning</li>
+                            <li>To Nurture Good Character</li>
+                            <li>To Build a Supportive Community</li>
+                            <li>To Provide Quality Education</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact">
+    <section id="activities">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">快乐学习活动</h2>
+                <h2 class="lang-en">Happy Learning Activities</h2>
+            </div>
+            <div class="activities-grid">
+                <div class="activity">
+                    <h4 class="lang-zh">科学俱乐部</h4>
+                    <h4 class="lang-en">Science Club</h4>
+                    <p class="lang-zh">通过有趣实验激发科学兴趣</p>
+                    <p class="lang-en">Stimulating interest in science through fun experiments</p>
+                </div>
+                <div class="activity">
+                    <h4 class="lang-zh">艺术与手工</h4>
+                    <h4 class="lang-en">Arts & Crafts</h4>
+                    <p class="lang-zh">培养创造力和表达能力</p>
+                    <p class="lang-en">Developing creativity and expression skills</p>
+                </div>
+                <div class="activity">
+                    <h4 class="lang-zh">户外探索</h4>
+                    <h4 class="lang-en">Outdoor Exploration</h4>
+                    <p class="lang-zh">大自然中学习和成长</p>
+                    <p class="lang-en">Learning and growing in nature</p>
+                </div>
+                <div class="activity">
+                    <h4 class="lang-zh">辩论与演讲</h4>
+                    <h4 class="lang-en">Debate & Public Speaking</h4>
+                    <p class="lang-zh">培养自信与沟通能力</p>
+                    <p class="lang-en">Building confidence and communication skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">联系我们</h2>
+                <h2 class="lang-en">Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="lang-zh">
+                        <p>🏢 办公室: +6 012-425 1556</p>
+                        <p>📞 电话 | 📲  WhatsApp: +6 012-425 1556</p>
+                        <p>📧 邮箱: LOVE@sun.edu.my</p>
+                        <p>📫 地址: No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>🏢 Office: +6 012-425 1556</p>
+                        <p>📞 Call Us | 📲 WhatsApp us: +6 012-425 1556</p>
+                        <p>📧 Email: LOVE@sun.edu.my</p>
+                        <p>📫 Address: No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SunriseResourceCentre" class="facebook-link lang-zh">关注我们的Facebook</a>
+                        <a href="https://www.facebook.com/SunriseResourceCentre" class="facebook-link lang-en">Follow us on Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Contact Us 联系我们</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Education Boulevard, Knowledge City</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> admissions@sunedu.my</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                <div class="footer-section">
+                    <h3 class="lang-zh">Sunrise 教育</h3>
+                    <h3 class="lang-en">Sunrise Education</h3>
+                    <p class="lang-zh">为学生提供优质的剑桥IGCSE教育，培养未来的领导者。</p>
+                    <p class="lang-en">Providing quality Cambridge IGCSE education to nurture future leaders.</p>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links 快速链接</h3>
+                <div class="footer-section">
+                    <h3 class="lang-zh">快速链接</h3>
+                    <h3 class="lang-en">Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home 首页</a></li>
-                        <li><a href="#about">About Us 关于我们</a></li>
-                        <li><a href="#programs">Programs 课程项目</a></li>
-                        <li><a href="#admissions">Admissions 招生信息</a></li>
-                        <li><a href="#contact">Contact 联系我们</a></li>
+                        <li><a href="#home" class="lang-zh">首页</a><a href="#home" class="lang-en">Home</a></li>
+                        <li><a href="#courses" class="lang-zh">课程</a><a href="#courses" class="lang-en">Courses</a></li>
+                        <li><a href="#about" class="lang-zh">关于我们</a><a href="#about" class="lang-en">About Us</a></li>
+                        <li><a href="#contact" class="lang-zh">联系我们</a><a href="#contact" class="lang-en">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Programs 课程项目</h3>
-                    <ul>
-                        <li><a href="#">Business & Management 商业与管理</a></li>
-                        <li><a href="#">Computer Science 计算机科学</a></li>
-                        <li><a href="#">Engineering 工程学</a></li>
-                        <li><a href="#">Health Sciences 健康科学</a></li>
-                        <li><a href="#">Arts & Design 艺术与设计</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Newsletter 订阅资讯</h3>
-                    <p>Subscribe to receive updates on programs, events, and admission deadlines.<br>订阅以接收课程、活动和申请截止日期的最新信息。</p>
-                    <form style="margin-top:15px;">
-                        <input type="email" placeholder="Your Email 您的邮箱" style="padding:10px;width:100%;border-radius:4px;border:1px solid #3a3b3c;background:#3a3b3c;color:white;margin-bottom:10px;">
-                        <button type="submit" class="btn btn-primary" style="width:100%;">Subscribe 订阅</button>
-                    </form>
+                <div class="footer-section">
+                    <h3 class="lang-zh">联系信息</h3>
+                    <h3 class="lang-en">Contact Info</h3>
+                    <p>📞 +6 012-425 1556</p>
+                    <p>✉️ LOVE@sun.edu.my</p>
+                    <p>📍 No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
                 </div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 SUN Education. All rights reserved. | 阳光教育 版权所有</p>
+            <div class="footer-bottom">
+                <p class="lang-zh">© 2023 Sunrise Education. 版权所有。</p>
+                <p class="lang-en">© 2023 Sunrise Education. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
-        });
-        
-        // Language switcher
-        const langButtons = document.querySelectorAll('.lang-btn');
-        langButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                langButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // In a real implementation, this would change the page content
-                alert('Language switched to: ' + this.textContent);
+        // Language Toggle
+        document.getElementById('langToggle').addEventListener('click', function() {
+            document.body.classList.toggle('lang-en');
+            this.textContent = document.body.classList.contains('lang-en') ? '中文' : 'EN';
+            
+            // Track language change with Facebook Pixel
+            fbq('track', 'ViewContent', {
+                content_name: 'Language Toggle',
+                content_category: 'Interaction',
+                content_type: 'language_' + (document.body.classList.contains('lang-en') ? 'english' : 'chinese')
             });
         });
         
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -741,10 +709,17 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('nav').classList.remove('active');
                 }
+            });
+        });
+        
+        // Track button clicks with Facebook Pixel
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                fbq('track', 'Lead', {
+                    content_name: this.textContent.trim(),
+                    content_category: 'Button Click'
+                });
             });
         });
     </script>
