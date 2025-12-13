@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Education | 剑桥IGCSE课程 - 马来西亚国际学校</title>
+    <meta name="description" content="Sunrise Education提供优质的剑桥IGCSE课程，全人教育，小班教学。快乐、学习、成长，在这里完美融合。">
+    <meta name="keywords" content="剑桥IGCSE, 马来西亚国际学校, 全人教育, 小班教学, 国际课程, Sunrise Education">
+    <meta name="author" content="Sunrise Education">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sunriseeducation.edu.my/">
+    <meta property="og:title" content="Sunrise Education | 剑桥IGCSE课程">
+    <meta property="og:description" content="快乐、学习、成长，在这里完美融合。提供优质的剑桥IGCSE教育。">
+    <meta property="og:image" content="https://sunriseeducation.edu.my/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sunriseeducation.edu.my/">
+    <meta property="twitter:title" content="Sunrise Education | 剑桥IGCSE课程">
+    <meta property="twitter:description" content="快乐、学习、成长，在这里完美融合。提供优质的剑桥IGCSE教育。">
+    <meta property="twitter:image" content="https://sunriseeducation.edu.my/images/og-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Sunrise Education",
+        "description": "剑桥IGCSE课程提供者，全人教育，小班教学",
+        "url": "https://sunriseeducation.edu.my",
+        "logo": "https://sunriseeducation.edu.my/logo.png",
+        "telephone": "+6-012-425-1556",
+        "email": "LOVE@sun.edu.my",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "No. 25-2nd Floor, Jalan Mahogani 5/Ks7",
+            "addressLocality": "Klang",
+            "addressRegion": "Selangor",
+            "postalCode": "41200",
+            "addressCountry": "MY"
+        },
+        "sameAs": [
+            "https://www.facebook.com/SunriseResourceCentre"
+        ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(52, 152, 219, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 1.5rem;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        .lang-toggle {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: var(--text-light);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: var(--transition);
+        }
+        
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(231, 76, 60, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-light);
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255,255,255,0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% { transform: scale(0, 0); opacity: 0.5; }
+            100% { transform: scale(20, 20); opacity: 0; }
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Image Carousel */
+        .carousel-section {
+            background: var(--light);
+            padding: 4rem 0;
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .carousel-btn:hover {
+            background: white;
+        }
+        
+        .carousel-btn.prev {
+            left: 20px;
+        }
+        
+        .carousel-btn.next {
+            right: 20px;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* Courses */
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .course-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .course-content {
+            padding: 1.5rem;
+        }
+        
+        .course-content ul {
+            list-style-type: none;
+        }
+        
+        .course-content li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .course-content li:before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* About */
+        .about-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .mission-section {
+            margin-top: 2rem;
+        }
+        
+        .mission-section ul {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+        
+        .mission-section li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .mission-section li:before {
+            content: "★";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Teachers Section */
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .teacher-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .teacher-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .teacher-info {
+            padding: 1.5rem;
+        }
+        
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .facebook-link {
+            display: inline-block;
+            background-color: #3b5998;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .facebook-link:hover {
+            background-color: #2d4373;
+            transform: translateY(-2px);
+        }
+        
+        /* Activities */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .activity {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .activity:hover {
+            transform: translateY(-5px);
+        }
+        
+        .activity h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--text-light);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .carousel-slide img {
+                height: 300px;
+            }
+        }
+        
+        /* Language Toggle */
+        .lang-en {
+            display: none;
+        }
+        
+        .lang-zh {
+            display: block;
+        }
+        
+        body.lang-en .lang-zh {
+            display: none;
+        }
+        
+        body.lang-en .lang-en {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        ↑
+    </button>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID_HERE');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <header id="mainHeader">
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Sunrise Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="lang-zh">首页</a><a href="#home" class="lang-en">Home</a></li>
+                    <li><a href="#courses" class="lang-zh">课程</a><a href="#courses" class="lang-en">Courses</a></li>
+                    <li><a href="#about" class="lang-zh">关于我们</a><a href="#about" class="lang-en">About Us</a></li>
+                    <li><a href="#teachers" class="lang-zh">教师团队</a><a href="#teachers" class="lang-en">Teachers</a></li>
+                    <li><a href="#blog" class="lang-zh">新闻动态</a><a href="#blog" class="lang-en">News</a></li>
+                    <li><a href="#activities" class="lang-zh">活动</a><a href="#activities" class="lang-en">Activities</a></li>
+                    <li><a href="#contact" class="lang-zh">联系我们</a><a href="#contact" class="lang-en">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="lang-toggle" id="langToggle">EN</button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="lang-zh">
+                <h2>欢迎来到 Sunrise 教育</h2>
+                <p>快乐、学习、成长，在这里完美融合。我们提供剑桥IGCSE课程，为学生的未来奠定坚实基础。</p>
+            </div>
+            <div class="lang-en">
+                <h2>Welcome to Sunrise Education</h2>
+                <p>Where Happiness, Learning and Growth Come Together. We offer Cambridge IGCSE Syllabus providing strong academic foundation for students' future.</p>
+            </div>
+            <a href="#courses" class="btn lang-zh">了解我们的课程</a>
+            <a href="#courses" class="btn lang-en">Discover Our Programs</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">我们的特色</h2>
+                <h2 class="lang-en">Our Features</h2>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <i>📚</i>
+                    <h3 class="lang-zh">剑桥 IGCSE 课程</h3>
+                    <h3 class="lang-en">Cambridge IGCSE Curriculum</h3>
+                    <p class="lang-zh">全球认可的课程体系，奠定坚实学术基础</p>
+                    <p class="lang-en">Globally recognized syllabus providing strong academic foundation</p>
+                </div>
+                <div class="feature-card">
+                    <i>🌟</i>
+                    <h3 class="lang-zh">全人教育</h3>
+                    <h3 class="lang-en">Holistic Development</h3>
+                    <p class="lang-zh">学术成就与品格培养、课外活动均衡发展</p>
+                    <p class="lang-en">Balancing academics with character building and extracurricular activities</p>
+                </div>
+                <div class="feature-card">
+                    <i>👨‍🏫</i>
+                    <h3 class="lang-zh">个性化关注</h3>
+                    <h3 class="lang-en">Personalized Attention</h3>
+                    <p class="lang-zh">小班教学，确保每个学生获得专属关怀</p>
+                    <p class="lang-en">Small class sizes ensuring every student receives dedicated care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel Section -->
+    <section class="carousel-section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">校园风采</h2>
+                <h2 class="lang-en">Campus Gallery</h2>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-slides" id="carouselSlides">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                             alt="Sunrise Education Campus" loading="lazy">
+                        <div class="slide-caption">
+                            <span class="lang-zh">现代化的教学环境</span>
+                            <span class="lang-en">Modern Teaching Environment</span>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                             alt="Student Activities" loading="lazy">
+                        <div class="slide-caption">
+                            <span class="lang-zh">丰富多彩的学生活动</span>
+                            <span class="lang-en">Colorful Student Activities</span>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" 
+                             alt="Learning Space" loading="lazy">
+                        <div class="slide-caption">
+                            <span class="lang-zh">舒适的学习空间</span>
+                            <span class="lang-en">Comfortable Learning Space</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">课程体系</h2>
+                <h2 class="lang-en">Our Courses</h2>
+            </div>
+            <div class="courses-container">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="lang-zh">小学阶段 (1-6年级)</h3>
+                        <h3 class="lang-en">Primary Level (Year 1-6)</h3>
+                    </div>
+                    <div class="course-content">
+                        <ul>
+                            <li class="lang-zh">英语语言与文学</li>
+                            <li class="lang-en">English Language & Literature</li>
+                            <li class="lang-zh">数学与科学基础</li>
+                            <li class="lang-en">Mathematics & Science Foundations</li>
+                            <li class="lang-zh">创意艺术与音乐</li>
+                            <li class="lang-en">Creative Arts & Music</li>
+                            <li class="lang-zh">体育教育</li>
+                            <li class="lang-en">Physical Education</li>
+                            <li class="lang-zh">道德教育与品格塑造</li>
+                            <li class="lang-en">Moral Education & Character Building</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="lang-zh">中学阶段 (7-11年级)</h3>
+                        <h3 class="lang-en">Secondary Level (Year 7-11)</h3>
+                    </div>
+                    <div class="course-content">
+                        <ul>
+                            <li class="lang-zh">高级数学与科学</li>
+                            <li class="lang-en">Advanced Mathematics & Sciences</li>
+                            <li class="lang-zh">商业研究与经济</li>
+                            <li class="lang-en">Business Studies & Economics</li>
+                            <li class="lang-zh">计算机科学与技术</li>
+                            <li class="lang-en">Computer Science & Technology</li>
+                            <li class="lang-zh">语言课程 (英文、马来文、华文)</li>
+                            <li class="lang-en">Languages (Mandarin, French, Spanish)</li>
+                            <li class="lang-zh">研究与项目工作</li>
+                            <li class="lang-en">Research & Project Work</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment System -->
+    <section id="appointment" style="background: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">预约咨询</h2>
+                <h2 class="lang-en">Book Appointment</h2>
+            </div>
+            <div class="form-container">
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name" class="lang-zh">姓名</label>
+                        <label for="name" class="lang-en">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="lang-zh">电话</label>
+                        <label for="phone" class="lang-en">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="lang-zh">电子邮箱</label>
+                        <label for="email" class="lang-en">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" class="lang-zh">预约日期</label>
+                        <label for="date" class="lang-en">Preferred Date</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="lang-zh">咨询内容</label>
+                        <label for="message" class="lang-en">Message</label>
+                        <textarea id="message" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn lang-zh">提交预约</button>
+                    <button type="submit" class="btn lang-en">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">关于我们</h2>
+                <h2 class="lang-en">About Us</h2>
+            </div>
+            <div class="about-container">
+                <div class="lang-zh">
+                    <h3>我们的教育理念</h3>
+                    <p>在Sunrise教育，我们相信每个孩子都像清晨的太阳，充满无限潜力和光芒。我们的使命是创造一个温暖、积极的环境，帮助他们在自信和快乐中学习和成长。</p>
+                    
+                    <div class="mission-section">
+                        <h3>我们的使命</h3>
+                        <ul>
+                            <li>点燃学习热情</li>
+                            <li>培养良好品格</li>
+                            <li>建立支持性社区</li>
+                            <li>提供优质教育</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lang-en">
+                    <h3>Our Education Philosophy</h3>
+                    <p>At Sunrise Education, we believe that every child is like the morning sun, full of infinite potential and light. Our mission is to create a warm and positive environment to help them learn and grow with confidence and joy.</p>
+                    
+                    <div class="mission-section">
+                        <h3>Our Missions</h3>
+                        <ul>
+                            <li>To Ignite a Passion for Learning</li>
+                            <li>To Nurture Good Character</li>
+                            <li>To Build a Supportive Community</li>
+                            <li>To Provide Quality Education</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section id="teachers">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">教师团队</h2>
+                <h2 class="lang-en">Our Teachers</h2>
+            </div>
+            <div class="teachers-grid">
+                <div class="teacher-card">
+                    <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Teacher" class="teacher-img" loading="lazy">
+                    <div class="teacher-info">
+                        <h4 class="lang-zh">张老师</h4>
+                        <h4 class="lang-en">Ms. Zhang</h4>
+                        <p class="lang-zh">数学科主任，15年教学经验</p>
+                        <p class="lang-en">Head of Mathematics, 15 years experience</p>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Teacher" class="teacher-img" loading="lazy">
+                    <div class="teacher-info">
+                        <h4 class="lang-zh">李老师</h4>
+                        <h4 class="lang-en">Mr. Lee</h4>
+                        <p class="lang-zh">科学科主任，剑桥认证教师</p>
+                        <p class="lang-en">Head of Science, Cambridge Certified</p>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Teacher" class="teacher-img" loading="lazy">
+                    <div class="teacher-info">
+                        <h4 class="lang-zh">王老师</h4>
+                        <h4 class="lang-en">Ms. Wang</h4>
+                        <p class="lang-zh">英语科主任，TESOL认证</p>
+                        <p class="lang-en">Head of English, TESOL Certified</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" style="background: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">最新动态</h2>
+                <h2 class="lang-en">Latest News</h2>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="News" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-date">2024-03-15</div>
+                        <h4 class="lang-zh">新学期开放日活动</h4>
+                        <h4 class="lang-en">New Semester Open Day</h4>
+                        <p class="lang-zh">欢迎参加我们的校园开放日，了解我们的课程体系...</p>
+                        <p class="lang-en">Join our campus open day to learn about our curriculum...</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1524178234883-043d5c3f3cf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="News" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-date">2024-03-10</div>
+                        <h4 class="lang-zh">学生科学竞赛获奖</h4>
+                        <h4 class="lang-en">Students Win Science Competition</h4>
+                        <p class="lang-zh">祝贺我校学生在国际科学竞赛中获得优异成绩...</p>
+                        <p class="lang-en">Congratulations to our students for outstanding performance...</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="News" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-date">2024-03-05</div>
+                        <h4 class="lang-zh">新图书馆正式开放</h4>
+                        <h4 class="lang-en">New Library Officially Opened</h4>
+                        <p class="lang-zh">我们的新图书馆已正式开放，藏书超过5000册...</p>
+                        <p class="lang-en">Our new library is now open with over 5000 books...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">快乐学习活动</h2>
+                <h2 class="lang-en">Happy Learning Activities</h2>
+            </div>
+            <div class="activities-grid">
+                <div class="activity">
+                    <h4 class="lang-zh">科学俱乐部</h4>
+                    <h4 class="lang-en">Science Club</h4>
+                    <p class="lang-zh">通过有趣实验激发科学兴趣</p>
+                    <p class="lang-en">Stimulating interest in science through fun experiments</p>
+                </div>
+                <div class="activity">
+                    <h4 class="lang-zh">艺术与手工</h4>
+                    <h4 class="lang-en">Arts & Crafts</h4>
+                    <p class="lang-zh">培养创造力和表达能力</p>
+                    <p class="lang-en">Developing creativity and expression skills</p>
+                </div>
+                <div class="activity">
+                    <h4 class="lang-zh">户外探索</h4>
+                    <h4 class="lang-en">Outdoor Exploration</h4>
+                    <p class="lang-zh">大自然中学习和成长</p>
+                    <p class="lang-en">Learning and growing in nature</p>
+                </div>
+                <div class="activity">
+                    <h4 class="lang-zh">辩论与演讲</h4>
+                    <h4 class="lang-en">Debate & Public Speaking</h4>
+                    <p class="lang-zh">培养自信与沟通能力</p>
+                    <p class="lang-en">Building confidence and communication skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-zh">联系我们</h2>
+                <h2 class="lang-en">Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="lang-zh">
+                        <p>🏢 办公室: +6 012-425 1556</p>
+                        <p>📞 电话 | 📲  WhatsApp: +6 012-425 1556</p>
+                        <p>📧 邮箱: LOVE@sun.edu.my</p>
+                        <p>📫 地址: No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>🏢 Office: +6 012-425 1556</p>
+                        <p>📞 Call Us | 📲 WhatsApp us: +6 012-425 1556</p>
+                        <p>📧 Email: LOVE@sun.edu.my</p>
+                        <p>📫 Address: No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SunriseResourceCentre" target="_blank" class="facebook-link lang-zh">关注我们的Facebook</a>
+                        <a href="https://www.facebook.com/SunriseResourceCentre" target="_blank" class="facebook-link lang-en">Follow us on Facebook</a>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName" class="lang-zh">姓名</label>
+                            <label for="contactName" class="lang-en">Full Name</label>
+                            <input type="text" id="contactName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail" class="lang-zh">电子邮箱</label>
+                            <label for="contactEmail" class="lang-en">Email Address</label>
+                            <input type="email" id="contactEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone" class="lang-zh">电话</label>
+                            <label for="contactPhone" class="lang-en">Phone Number</label>
+                            <input type="tel" id="contactPhone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage" class="lang-zh">留言</label>
+                            <label for="contactMessage" class="lang-en">Message</label>
+                            <textarea id="contactMessage" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn lang-zh">发送消息</button>
+                        <button type="submit" class="btn lang-en">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="lang-zh">Sunrise 教育</h3>
+                    <h3 class="lang-en">Sunrise Education</h3>
+                    <p class="lang-zh">为学生提供优质的剑桥IGCSE教育，培养未来的领导者。</p>
+                    <p class="lang-en">Providing quality Cambridge IGCSE education to nurture future leaders.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="lang-zh">快速链接</h3>
+                    <h3 class="lang-en">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" class="lang-zh">首页</a><a href="#home" class="lang-en">Home</a></li>
+                        <li><a href="#courses" class="lang-zh">课程</a><a href="#courses" class="lang-en">Courses</a></li>
+                        <li><a href="#about" class="lang-zh">关于我们</a><a href="#about" class="lang-en">About Us</a></li>
+                        <li><a href="#blog" class="lang-zh">新闻动态</a><a href="#blog" class="lang-en">News</a></li>
+                        <li><a href="#contact" class="lang-zh">联系我们</a><a href="#contact" class="lang-en">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="lang-zh">联系信息</h3>
+                    <h3 class="lang-en">Contact Info</h3>
+                    <p>📞 +6 012-425 1556</p>
+                    <p>✉️ LOVE@sun.edu.my</p>
+                    <p>📍 No. 25-2nd Floor, Jalan Mahogani 5/Ks7, 41200 Klang, Selangor, Malaysia</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="lang-zh">网站地图</h3>
+                    <h3 class="lang-en">Sitemap</h3>
+                    <p><a href="/sitemap.xml" class="lang-zh">查看XML网站地图</a><a href="/sitemap.xml" class="lang-en">View XML Sitemap</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="lang-zh">© 2023 Sunrise Education. 版权所有。 | <a href="/privacy.html" style="color: #bbb;">隐私政策</a></p>
+                <p class="lang-en">© 2023 Sunrise Education. All Rights Reserved. | <a href="/privacy.html" style="color: #bbb;">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate feature cards with delay
+                    if (entry.target.id === 'features') {
+                        const cards = entry.target.querySelectorAll('.feature-card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.classList.add('animated');
+                            }, index * 200);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Image Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dotsContainer = document.getElementById('carouselDots');
+        
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        function updateCarousel() {
+            const slidesContainer = document.getElementById('carouselSlides');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        // Auto slide
+        setInterval(nextSlide, 5000);
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        
+        // Initialize carousel
+        updateCarousel();
+
+        // Form Submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                date: document.getElementById('date').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Here you would typically send this to your server
+            console.log('Appointment booked:', formData);
+            
+            alert(document.body.classList.contains('lang-en') ? 
+                  'Appointment submitted successfully! We will contact you soon.' : 
+                  '预约提交成功！我们将尽快联系您。');
+            
+            this.reset();
+            
+            // Track with Facebook Pixel
+            fbq('track', 'Lead', {
+                content_name: 'Appointment Form Submission',
+                content_category: 'Form'
+            });
+        });
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                message: document.getElementById('contactMessage').value
+            };
+            
+            // Here you would typically send this to your server
+            console.log('Contact form submitted:', formData);
+            
+            alert(document.body.classList.contains('lang-en') ? 
+                  'Message sent successfully! We will reply as soon as possible.' : 
+                  '消息发送成功！我们将尽快回复您。');
+            
+            this.reset();
+            
+            // Track with Facebook Pixel
+            fbq('track', 'Contact', {
+                content_name: 'Contact Form Submission',
+                content_category: 'Form'
+            });
+        });
+
+        // Language Toggle
+        document.getElementById('langToggle').addEventListener('click', function() {
+            document.body.classList.toggle('lang-en');
+            this.textContent = document.body.classList.contains('lang-en') ? '中文' : 'EN';
+            
+            // Save preference to localStorage
+            localStorage.setItem('language', document.body.classList.contains('lang-en') ? 'en' : 'zh');
+            
+            // Track language change with Facebook Pixel
+            fbq('track', 'ViewContent', {
+                content_name: 'Language Toggle',
+                content_category: 'Interaction',
+                content_type: 'language_' + (document.body.classList.contains('lang-en') ? 'english' : 'chinese')
+            });
+        });
+        
+        // Load saved language preference
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage === 'en') {
+            document.body.classList.add('lang-en');
+            document.getElementById('langToggle').textContent = '中文';
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Track button clicks with Facebook Pixel
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                fbq('track', 'Lead', {
+                    content_name: this.textContent.trim(),
+                    content_category: 'Button Click'
+                });
+            });
+        });
+        
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
